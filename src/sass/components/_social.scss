@@ -1,0 +1,51 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.social {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+
+  &-item {
+
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+   background: #899088;
+@include transition(.5);
+    @media (max-width: $breakpoint-md) {
+
+    }
+
+    & i {
+      color: $white-color;
+      @include fontSize(18, 20);
+      @include transition(.5);
+    }
+
+    & a {
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover {
+
+    }
+
+
+    &.telegram {
+      background: rgba(39, 166, 229, 1);
+    }
+
+    &.facebook {
+      background: rgba(11, 132, 238, 1);
+    }
+
+    &.viber {
+      background: rgba(124, 80, 154, 1);
+    }
+  }
+}
+

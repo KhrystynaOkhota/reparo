@@ -1,0 +1,192 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.s-contacts {
+
+  &:not(&.--home) {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    @media (max-width: $breakpoint-md) {
+      padding-top: 20px;
+      padding-bottom: 50px;
+    }
+  }
+
+  & .heading {
+  }
+
+  & .description {
+    font-size: 25px;
+    margin-bottom: 30px;
+    line-height: 1.35;
+    @media (max-width: $breakpoint-md) {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  & .location {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  & .social {
+    margin-top: 33px;
+    @media (max-width: $breakpoint-md) {
+      margin-top: 25px;
+    }
+
+    &-item {
+
+
+      & i {
+
+      }
+
+      &:hover i {
+        color: #192D24;
+      }
+    }
+  }
+
+  & .contact {
+    gap: 20px;
+    display: grid;
+    margin-bottom: 20px;
+
+    &-item {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 15px;
+
+      & i {
+        font-size: 20px;
+        text-align: center;
+        color: rgba(206, 193, 182, 1);
+        font-weight: bold;
+
+        &.icon-mail {
+          font-size: 16px;
+        }
+      }
+
+      & a {
+        &[href^="mailto:"] {
+          color: rgba(75, 101, 83, 1);
+        }
+
+      }
+    }
+
+    &-form {
+      background: rgba(246, 244, 242, 1);
+      padding: 40px 35px;
+      @media (max-width: $breakpoint-md) {
+        padding: 28px 10px 41px 10px;
+        margin-top: 40px;
+      }
+
+      & .title {
+        margin-bottom: 26px;
+        font-size: 35px;
+        text-align: center;
+        @media (max-width: $breakpoint-md) {
+          font-size: 30px;
+
+          margin-bottom: 20px;
+        }
+      }
+
+      & .btn-primary {
+        min-width: 263px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      & .form-control {
+        margin-bottom: 20px;
+
+        &__input, &__textarea {
+          background: $white-color;
+          border-radius: 0;
+          padding: 20px 20px 13px 20px;
+          font-size: 16px;
+          line-height: 1;
+          font-family: 'OpenSans', sans-serif;
+          font-weight: 400;
+          color: rgba(151, 151, 151, 1);
+          @media (max-width: $breakpoint-md) {
+            padding: 17px 20px 16px 20px;
+          }
+
+          &::-webkit-input-placeholder {
+            font-size: 16px;
+            line-height: 1;
+            font-family: 'OpenSans', sans-serif;
+            font-weight: 400;
+            color: rgba(151, 151, 151, 1);
+
+            opacity: 1;
+            transition: opacity 0.5s;
+          }
+
+          &::-moz-placeholder {
+            font-size: 16px;
+            line-height: 1;
+            font-family: 'OpenSans', sans-serif;
+            font-weight: 400;
+            color: rgba(151, 151, 151, 1);
+
+            opacity: 1;
+            transition: opacity 0.5s;
+          }
+
+          &:-ms-input-placeholder {
+            font-size: 16px;
+            line-height: 1;
+            font-family: 'OpenSans', sans-serif;
+            font-weight: 400;
+            color: rgba(151, 151, 151, 1);
+
+            opacity: 1;
+            transition: opacity 0.5s;
+          }
+
+          &:focus::-webkit-input-placeholder {
+            opacity: 0;
+            transition: opacity 0.5s;
+          }
+
+          &:focus::-moz-placeholder {
+            opacity: 0;
+            transition: opacity 0.5s;
+          }
+
+          &:focus:-moz-placeholder {
+            opacity: 0;
+            transition: opacity 0.5s;
+          }
+
+          &:focus:-ms-input-placeholder {
+            opacity: 0;
+            transition: opacity 0.5s;
+          }
+
+        }
+      }
+    }
+  }
+
+}
+
+.s-map {
+  & .map {
+    height: 100%;
+    width: 100%;
+
+    &__wrap {
+      height: 500px;
+      position: relative;
+    }
+  }
+}

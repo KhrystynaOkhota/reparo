@@ -1,0 +1,58 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.s-product {
+  margin-bottom: 150px;
+
+  & .product {
+    &__title {
+      margin-bottom: 22px;
+
+    }
+
+    &__price {
+      margin-bottom: 34px;
+      font-size: 25px;
+      color: #08121E;
+      font-weight: bold;
+    }
+
+    &__controls {
+      margin-bottom: 33px;
+
+
+      & .product-qty {
+        background: #fff;
+        border: 1px solid #EFEADF;
+        padding: 14px 13px;
+        margin-right: 20px;
+
+        &__btn {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          margin: 0;
+          border: none;
+          background: transparent;
+
+          & i {
+            color: #899088;
+            font-size: 20px;
+          }
+        }
+
+        &__input {
+          width: 64px;
+          border: none;
+          text-align: center;
+          font-size: 18px;
+          color: #899088;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,23 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.accordion-toggle {
+  display: none;
+}
+
+.s-price {
+  padding: 100px 0 150px 0;
+}
+
+.s-faq {
+  background: #F4EFE6;
+  padding: 85px 0 70px 0;
+  margin-bottom: 100px;
+
+  & .accordion {
+    margin-top: 50px;
+  }
+}
+
+
+

@@ -1,0 +1,81 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.kama_breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: transparent;
+  padding: 24px 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: rgba(175, 166, 159, 1);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+
+
+  width: 100%;
+
+
+  z-index: 2;
+  white-space: nowrap;
+
+  position: relative;
+  @include transition(.4);
+
+  @media (max-width: $breakpoint-md) {
+    padding: 12px 0;
+  }
+
+  & a {
+    color: rgba(94, 108, 91, 1);
+    @include fontSize(14, 16);
+    position: relative;
+    font-weight: 300;
+
+    &:hover {
+
+    }
+  }
+
+  .breadcrumb_last {
+    color: rgba(177, 185, 176, 1);
+  }
+
+  & .kb {
+    &_title {
+      color: rgba(177, 185, 176, 1);
+      @include fontSize(14, 16);
+    }
+
+    &_sep {
+
+      & i {
+        @include fontSize(12, 14);
+        color: rgba(175, 166, 159, 1);
+      }
+
+
+      margin: 0 14px;
+      @media (max-width: $breakpoint-md) {
+        margin: 0 5px;
+      }
+
+      &:has(+ .kb_title) {
+        & i {
+          color: rgba(175, 166, 159, 1);
+        }
+      }
+    }
+
+
+  }
+
+
+}

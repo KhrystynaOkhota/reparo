@@ -1,0 +1,76 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.s-catalog {
+  margin-bottom: 150px;
+
+  & .heading {
+    margin-bottom: 30px;
+  }
+
+  & .product {
+    &__wrap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 50px;
+      gap: 50px 20px;
+      @media (max-width: $breakpoint-lg) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: $breakpoint-md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        text-align: center;
+      }
+    }
+
+    &__info {
+      width: 85%;
+      @media (max-width: $breakpoint-sm) {
+        margin: 0 auto;
+       width:calc(100% - 100px);
+      }
+    }
+
+    &__title {
+      margin-bottom: 3px;
+      color: rgba(94, 108, 91, 1);
+      font-size: 18px;
+      line-height: 1.66;
+    }
+
+    &__price {
+      margin-bottom: 11px;
+    }
+
+    &__img {
+      position: absolute;
+      top: 7px;
+      left: 50%;
+      height: calc(100% - 14px);
+      transform: translateX(-50%);
+      object-fit: contain;
+
+      &-wrap {
+        position: relative;
+        padding-bottom: 65%;
+        margin-bottom: 11px;
+        display: block;
+        background: $white-color;
+        border: 1px solid rgba(239, 234, 223, 1);
+      }
+    }
+
+    & .btn-primary {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+

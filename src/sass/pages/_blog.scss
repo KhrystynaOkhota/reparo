@@ -1,0 +1,125 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.event {
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    &-wrap {
+      overflow: hidden;
+      padding-bottom: 105%;
+      position: relative;
+      margin-bottom: 18px;
+    }
+  }
+
+  &__date {
+    font-size: 17px;
+
+    color: #797979;
+    margin-bottom: 9px;
+    padding-left: 39px;
+    @media (max-width: $breakpoint-xl) {
+      padding-left: 29px;
+      font-size: 14px;
+    }
+
+    &:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url("../img/clock.svg");
+      background-size: contain;
+      @media (max-width: $breakpoint-xl) {
+        width: 20px;
+        height: 20px
+      }
+    }
+  }
+
+  &__title {
+    color: rgba(75, 101, 83, 1);
+    font-size: 20px;
+    @media (max-width: $breakpoint-xl) {
+      font-size: 14px;
+    }
+  }
+}
+
+.s-blog {
+  margin-bottom: 150px;
+
+  & .heading {
+    margin-bottom: 30px;
+  }
+
+  & .article {
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 56px 30px;
+      margin-bottom: 70px;
+    }
+
+    &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      &-wrap {
+        margin-bottom: 23px;
+        padding-bottom: 75%;
+      }
+    }
+
+    &__title {
+      font-size: 22px;
+      color: #5E6C5B;
+      margin-bottom: 5px;
+    }
+
+    &__date {
+      margin-bottom: 3px;
+      font-size: 18px;
+      color: #899088;
+    }
+
+    &__description {
+      font-size: 18px;
+      color: #08121E;
+    }
+  }
+}
+
+.s-post {
+  margin-bottom: 150px;
+
+  & .heading {
+    margin-bottom: 20px;
+  }
+
+  & .date {
+    margin-bottom: 41px;
+    color: #899088;
+    font-size: 18px;
+  }
+
+  & .img {
+    &__wrap {
+      width: 75%;
+      margin: 0 auto 42px auto;
+    }
+  }
+}

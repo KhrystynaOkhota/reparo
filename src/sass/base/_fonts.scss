@@ -1,0 +1,63 @@
+/*Giga Sans*/
+
+@font-face {
+  font-family: 'GigaSans';
+  src: url('../fonts/GigaSans-Light.woff2') format('woff2'),
+  url('../fonts/GigaSans-Light.woff') format('woff');
+  font-weight: 300; /* normal weight */
+  font-style: normal;
+}
+/* Semibold / 600 */
+@font-face {
+  font-family: 'GigaSans';
+  src: url('../fonts/GigaSans-Semibold.woff2') format('woff2'),
+  url('../fonts/GigaSans-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Extrabold / 800 */
+
+@font-face {
+  font-family: 'GigaSans';
+  src: url('../fonts/GigaSans-Bold.woff2') format('woff2'),
+  url('../fonts/GigaSans-Bold.woff') format('woff');
+  font-weight: 700; /* bold weight */
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GigaSans';
+  src: url('../fonts/GigaSans-Extrabold.woff2') format('woff2'),
+  url('../fonts/GigaSans-Extrabold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+/* icomoon */
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot');
+  src: url('../fonts/icomoon.eot') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf') format('truetype'),
+  url('../fonts/icomoon.woff') format('woff'),
+  url('../fonts/icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
