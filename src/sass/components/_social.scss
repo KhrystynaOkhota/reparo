@@ -8,13 +8,27 @@
   display: flex;
   gap: 20px;
 
+  &.fixed-right {
+    display: grid;
+    gap: 20px;
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    @media (max-width: 1457px) {
+      display: none;
+    }
+
+  }
+
   &-item {
 
     width: 40px;
     height: 40px;
     cursor: pointer;
-   background: #899088;
-@include transition(.5);
+    background: #899088;
+    @include transition(.5);
     @media (max-width: $breakpoint-md) {
 
     }

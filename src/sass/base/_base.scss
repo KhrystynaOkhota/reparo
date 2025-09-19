@@ -276,14 +276,31 @@ img {
 
     &-next, &-prev {
       border: none;
-
+      background: #EFEADF;
+      width: 81px;
+      height: 50px;
+      border-radius: 0;
+      @include transition(.5);
+      @media (max-width: $breakpoint-md) {
+        width: 53px;
+        height: 33px;
+      }
       &:after {
         display: none;
       }
 
       i {
-        color: #fff;
-        font-size: 20px;
+        color: #899088;
+        font-size: 16px;
+        @include transition(.5);
+      }
+
+      &:hover {
+        background: #899088;
+
+        & i {
+          color: $white-color;
+        }
       }
     }
   }

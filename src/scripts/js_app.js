@@ -164,16 +164,6 @@ jQuery(document).on('click', '.accordion-title', function () {
 
 
 // =============================
-// SumoSelect
-// =============================
-
-if (jQuery('.select-box').length) {
-
-    jQuery('.default').SumoSelect();
-};
-
-
-// =============================
 // PLAY AND STOP VIDEO
 // =============================
 
@@ -214,99 +204,7 @@ jQuery('.preload__btn').on('click', function () {
     }
 });
 
-// =============================
-// FILTER
-// =============================
-
-jQuery(document).on("click", ".fl-title", function () {
-    jQuery(this).toggleClass("is-active");
-    //  $(".fl-menu-item").removeClass("is-open");
-    jQuery(this).closest(".fl-menu-item").toggleClass("is-open");
-    jQuery(this).closest(".fl-menu-item").find(".fl-toggle").first().slideToggle(300);
-});
-//open filters on mobile
-jQuery(document).on("click", ".btn-filter", function () {
-    jQuery("body,html").toggleClass("overflow-hidden");
-    jQuery(this).toggleClass("is-open");
-    jQuery(".fl-menu__wrap").toggleClass("is-open");
-    jQuery(".fl-menu__overlay").toggleClass("is-active");
-});
-jQuery(document).on("click", ".fl-menu__overlay, .fl-menu__close", function () {
-    jQuery(this).hasClass("is-active")
-        ? jQuery(this).removeClass("is-active")
-        : jQuery(this).addClass("is-active");
-
-    jQuery(".fl-menu__wrap").removeClass("is-open"),
-        jQuery("body,html").toggleClass("overflow-hidden");
-
-});
-
-// =============================
-// LIGHTGALLERY
-// =============================
 
 
-// =============================
-// TAB
-// =============================
-const tabs = document.querySelectorAll(".tab");
-
-function tabify(tab) {
-    const tabList = tab.querySelector(".tab__list");
-
-    if (tabList) {
-        const tabItems = [...tabList.children];
-        const tabContent = tab.querySelector(".tab__content");
-        const tabContentItems = [...tabContent.children];
-        let tabIndex = 0;
-
-        tabIndex = tabItems.findIndex((item, index) => {
-            return [...item.classList].indexOf("is--active") > -1;
-        });
-
-        tabIndex > -1 ? (tabIndex = tabIndex) : (tabIndex = 0);
-
-        function setTab(index) {
-            tabItems.forEach((x, index) => x.classList.remove("is--active"));
-            tabContentItems.forEach((x, index) => x.classList.remove("is--active"));
-
-            tabItems[index].classList.add("is--active");
-            tabContentItems[index].classList.add("is--active");
-        }
-
-        tabItems.forEach((x, index) =>
-            x.addEventListener("click", () => setTab(index))
-        );
-        setTab(tabIndex);
-        tab.querySelectorAll(".tab").forEach((tabContent) => tabify(tabContent));
-    }
-}
-
-tabs.forEach(tabify);
-
-// =============================
-// OPEN SUBMENU
-// =============================
-
-jQuery(document).on("click", ".menu-item-has-children > a", function (e) {
-    e.preventDefault();
-    jQuery(this).closest(".menu-item").find(".sub-menu").first().slideToggle(300);
-});
-
-// =============================
-// PRICE
-// =============================
 
 
-if (jQuery('#slider').length) {
-    jQuery("#slider").slider({
-        range: true,
-        min: 0,
-        max: 7000,
-        values: [8, 6666],
-        slide: function (event, ui) {
-            jQuery(".from").val(ui.values[0]);
-            jQuery(".to").val(ui.values[1]);
-        }
-    });
-};

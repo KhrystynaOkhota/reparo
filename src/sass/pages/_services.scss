@@ -1,23 +1,499 @@
 @import "../abstracts/mixins";
 @import "../abstracts/variables";
 
-.accordion-toggle {
-  display: none;
+.accordion {
+  &-toggle {
+    display: none;
+
+    &__inner {
+      padding-top: 20px;
+    }
+  }
+
+  &-title {
+    padding: 20px 0 0 0;
+
+  }
+
+  &-entry {
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    padding-bottom: 20px;
+
+    &:last-child {
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+  }
+
+  &__title {
+    width: calc(100% - 60px);
+  }
+
+  &__btn {
+    width: 40px;
+    height: 40px;
+    border: 0.59px solid rgba(94, 108, 91, 0.25);
+    cursor: pointer;
+    @include transition(.5);
+  }
+}
+
+.s-hero {
+
+  @media (max-width: $breakpoint-md) {
+    text-align: center;
+  }
+
+  & .heading {
+    @include fontSize(45, 65);
+    margin-bottom: 78px;
+    position: relative;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 48px;
+    }
+
+    &:after {
+      content: '';
+      width: 31.25%;;
+      height: 5px;
+      background: #B0B8AF;
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      @media (max-width: $breakpoint-md) {
+        bottom: -23px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &__sub {
+      color: #5E6C5B;
+      @include fontSize(23, 40);
+      margin-bottom: 20px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  & .description {
+    margin-bottom: 50px;
+    @include fontSize(22, 25);
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 23px;
+    }
+  }
+
+  & .btn-primary {
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 30px;
+    }
+  }
+
+  & .img {
+    &__wrap {
+      width: 50vw;
+      @media (max-width: $breakpoint-md) {
+        width: calc(100% + 20px);
+        position: relative;
+        left: -10px;
+      }
+    }
+  }
+
+
+}
+
+
+.s-types-cleaning {
+  padding: 140px 0 150px;
+
+  & .heading {
+    margin-bottom: 26px;
+  }
+
+  & .types-cleaning {
+    position: relative;
+
+    &__grid {
+      gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &__number {
+      margin-bottom: 20px;
+      width: 56px;
+      height: 28px;
+      background: #FEFCF6;
+      border: 1px solid rgba(137, 144, 136, 0.34);
+      text-align: center;
+      border-radius: 21px;
+      line-height: 1;
+      padding: 5px 0;
+
+
+      &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: rgba(0, 0, 0, .1);
+        position: absolute;
+        top: 14px;
+        left: 0;
+        z-index: -1;
+      }
+    }
+
+    &__heading {
+      font-size: 20px;
+      margin-bottom: 23px;
+    }
+
+    &__more {
+      border: 1px solid #5E6C5B;
+      padding: 16px 20px;
+      display: inline-block;
+      min-width: 243px;
+      text-align: center;
+    }
+
+    &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      &-wrap {
+        position: relative;
+        padding-bottom: 88%;
+        margin-bottom: 22px;
+      }
+    }
+  }
+}
+
+.s-text {
+  padding: 80px 0;
+
+  & .cms-content {
+    & p {
+      @include fontSize(18, 25);
+    }
+  }
+}
+
+.s-comparison {
+  background: #F4EFE6;
+  padding: 86px 0 150px 0;
+
+  &__top {
+    margin-bottom: 40px;
+  }
 }
 
 .s-price {
-  padding: 100px 0 150px 0;
+  padding: 109px 0 109px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 44px 0 70px 0;
+  }
+
+  & .heading {
+    margin-bottom: 50px;
+    @media (max-width: $breakpoint-md) {
+
+      margin-bottom: 18px;
+    }
+  }
+
+  & .accordion {
+    margin-top: 50px;
+    @media (max-width: $breakpoint-md) {
+      margin-top: 26px;
+    }
+
+    &__btn {
+      border: 0.59px solid rgba(94, 108, 91, 0.25);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+
+      & i {
+        color: #5E6C5B;
+      }
+
+    }
+
+    &__title {
+      color: #5E6C5B;
+
+      @include fontSize(22, 30);
+      line-height: normal;
+      @include transition(.5);
+
+      &-wrap {
+
+      }
+    }
+
+
+    &__inner {
+      padding-bottom: 6px;
+      padding-top: 20px;
+    }
+
+
+    & .active {
+      & .accordion {
+        &__title {
+          color: #899088;
+        }
+
+        &__btn {
+          background: #B0B8AF;
+
+          & span {
+            &:after {
+              background: $white-color;
+            }
+
+            &:before {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+
+
+    & .price__item {
+      padding: 16px 15px;
+      display: grid;
+      grid-template-columns: 43.75% 25% 31.25%;
+      gap: 15px;
+      @media (max-width: $breakpoint-md) {
+        grid-template-columns: 1fr 1fr;
+        & .title {
+          grid-column: 1 / -1
+        }
+      }
+
+      &:not(.price__item-top) {
+        &:nth-child(odd) {
+          background: $white-color;
+        }
+
+        & .title, .price {
+          color: #5E6C5B;
+        }
+
+        & .title {
+          padding-left: 15px;
+        }
+
+        & .price {
+          font-size: 20px;
+        }
+      }
+
+      &-top {
+        & .price, & .title {
+          color: #5E6C5B;
+          @include fontSize(22, 30);
+        }
+      }
+    }
+  }
 }
 
 .s-faq {
   background: #F4EFE6;
   padding: 85px 0 70px 0;
   margin-bottom: 100px;
+  @media (max-width: $breakpoint-md) {
+    padding: 57px 0 36px 0;
+    margin-bottom: 70px;
+  }
+
+  & .heading {
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 11px;
+    }
+  }
 
   & .accordion {
     margin-top: 50px;
+    @media (max-width: $breakpoint-md) {
+      margin-top: 26px;
+    }
+
+    &__btn {
+      & span {
+        width: 16px;
+        height: 16px;
+        display: block;
+        position: relative;
+
+        &:after {
+          content: '';
+          width: 16px;
+          height: 3px;
+          background: #5E6C5B;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          @include transition(.5);
+        }
+
+        &:before {
+          content: '';
+          height: 16px;
+          width: 3px;
+          background: #5E6C5B;
+          position: absolute;
+          top: 0;
+          transform: translateX(-50%);
+          left: 50%;
+          @include transition(.5);
+        }
+      }
+
+    }
+
+    &__title {
+      color: #5E6C5B;
+
+      @include fontSize(18, 20);
+      line-height: normal;
+      @include transition(.5);
+
+      &-wrap {
+
+      }
+    }
+
+
+    &__inner {
+      padding-bottom: 6px;
+      padding-top: 20px;
+    }
+
+
+    & .active {
+      & .accordion {
+        &__title {
+          color: #899088;
+        }
+
+        &__btn {
+          background: #B0B8AF;
+
+          & span {
+            &:after {
+              background: $white-color;
+            }
+
+            &:before {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+
+    &__wrap {
+      padding-bottom: 100%;
+      @media (max-width: $breakpoint-md) {
+        margin-top: 32px;
+        padding-bottom: 50%;
+      }
+    }
+  }
+
+  & .cms-content {
+    & p {
+      @include fontSize(17, 18);
+    }
+  }
+}
+
+.s-cta {
+  margin-bottom: 75px;
+  margin-top: 26px;
+
+  & .heading {
+    margin-bottom: 52px;
+  }
+
+  & .content {
+    padding: 75px 0;
+  }
+
+  &__inner {
+    background: #F4EFE6;
+
+  }
+
+  & .img {
+    &__wrap {
+      margin-top: -26px;
+      margin-bottom: -75px;
+      width: calc(100% - 56px);
+    }
   }
 }
 
 
+.s-promo {
+  padding: 47px 0 175px 0;
 
+  & .btn-primary {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 23px 84px;
+    margin-left: 30px;
+
+    @media (max-width: $breakpoint-md) {
+      margin: 24px auto 0 auto;
+      width: 100%;
+      max-width: 345px;
+      display: block;
+      text-align: center;
+      padding: 24px 20px;
+    }
+  }
+
+  & .promo-img {
+    background: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    width: 180px;
+    height: 70px;
+    border-radius: 900px;
+    object-fit: cover;
+    margin: 0 20px;
+    @media (max-width: $breakpoint-md) {
+      width: 80px;
+      height: 40px;
+      margin: 0 5px;
+    }
+  }
+
+  & .promo-text {
+    @include fontSize(29, 60);
+    font-weight: 300;
+  }
+}
