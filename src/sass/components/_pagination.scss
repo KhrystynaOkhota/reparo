@@ -52,7 +52,7 @@
       font-size: 12px;
       font-weight: 300;
       text-align: center;
-      color: rgba(139, 117, 96, 1);
+      color: #000;
       width: 30px;
       height: 30px;
       background: transparent;
@@ -74,18 +74,18 @@
       }
 
       &.end, &.start, &.next, &.prev {
-        background: rgba(240, 235, 232, 1);
+        background: #D1DBD0;
 
 
       }
 
       &.current {
-        background: rgba(68, 105, 61, 1);
+        background: #5E6C5B;
         color: $white-color;
       }
 
       &:not(.next,.prev ,.end, .start,):hover {
-        background: rgba(68, 105, 61, 1);;
+        background: #5E6C5B;
         color: $white-color;
       }
     }

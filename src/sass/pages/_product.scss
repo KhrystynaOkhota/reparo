@@ -52,7 +52,39 @@
           color: #899088;
         }
       }
+
+      & .btn-primary {
+        min-width: 243px;
+      }
+    }
+  }
+
+  & .swiper-thumbs {
+    & .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+
+      &__wrap {
+        position: relative;
+        padding-bottom: 86%;
+        background: $white-color;
+        border: 1px solid rgba(239, 234, 223, 1);
+      }
+    }
+
+    &-top {
+      margin-bottom: 20px;
+    }
+
+    &-bottom {
+      width: 80%;
+      margin-right: auto;
+      margin-left: 0;
     }
   }
 }
-

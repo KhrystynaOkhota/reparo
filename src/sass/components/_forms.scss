@@ -50,20 +50,20 @@ input, button {
 
       background: transparent;
       border: none;
-      border: 1px solid rgba(255, 255, 255, .3);
+      border: 1px solid #EFEADF;
       border-radius: 0;
       cursor: pointer;
       display: block;
       width: 100%;
-      font-size: 16px;
+      font-size: 18px;
 
       line-height: 1;
-      font-family: 'OpenSans', sans-serif;
+      font-family: 'GigaSans', sans-serif;
       font-weight: 400;
-      color: rgba(151, 151, 151, 1);
+      color: #899088;
 
       resize: none;
-      padding: 12px 20px;
+      padding: 16px 20px 15px 20px;
     }
 
 
@@ -80,33 +80,36 @@ input, button {
 }
 
 ::-webkit-input-placeholder {
-  font-size: 16px;
+  font-size: 18px;
+
   line-height: 1;
-  font-family: 'OpenSans', sans-serif;
+  font-family: 'GigaSans', sans-serif;
   font-weight: 400;
-  color: rgba(151, 151, 151, 1);
+  color: #899088;
 
   opacity: 1;
   transition: opacity 0.5s;
 }
 
 ::-moz-placeholder {
-  font-size: 16px;
+  font-size: 18px;
+
   line-height: 1;
-  font-family: 'OpenSans', sans-serif;
+  font-family: 'GigaSans', sans-serif;
   font-weight: 400;
-  color: rgba(151, 151, 151, 1);
+  color: #899088;
 
   opacity: 1;
   transition: opacity 0.5s;
 }
 
 :-ms-input-placeholder {
-  font-size: 16px;
+  font-size: 18px;
+
   line-height: 1;
-  font-family: 'OpenSans', sans-serif;
+  font-family: 'GigaSans', sans-serif;
   font-weight: 400;
-  color: rgba(151, 151, 151, 1);
+  color: #899088;
 
   opacity: 1;
   transition: opacity 0.5s;

@@ -2,121 +2,46 @@
 @import "../abstracts/variables";
 
 
-.s-error, .s-thanks {
-  background: rgba(255, 249, 242, 1);
-  position: relative;
-  height: 100vh;
-  @media (max-width: $breakpoint-md) {
-    height: auto;
-  }
-
-  & .logo {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-
-    &__wrap {
-
-      display: block;
-
-      width: 241px;
-      height: 47px;
-      top: 47px;
-
-      @media (max-width: $breakpoint-md) {
-        width: 180px;
-        height: 70px;
-      }
-    }
+.s-thanks {
+  &__inner {
+    padding-top: 40px;
   }
 
   & .content {
-    & .heading, & .description {
-      color: rgba(139, 117, 96, 1);
-    }
+    padding-top: 200px;
+    padding-bottom: 132px;
 
     & .heading {
-      margin-bottom: 5%;
-      @include fontSize(35, 60);
-      @media (max-width: $breakpoint-md) {
-        margin-bottom: 30px;
-      }
-
+      @include fontSize(25, 35);
+      color: #5E6C5B;
+      // margin-bottom: 32px;
       &__accent {
-        @include fontSize(65, 120);
-        color: rgba(75, 101, 83, 1);
-        margin-bottom: 7%;
-        @media (max-width: $breakpoint-md) {
-          margin-bottom: 30px;
-        }
+        font-size: 250px;
       }
     }
 
     & .description {
-      margin-bottom: 5%;
-      @include fontSize(20, 30);
+      margin-top: 40px;
+      @include fontSize(20, 22);
+      text-align: right;
       @media (max-width: $breakpoint-md) {
-        margin-bottom: 40px;
+        margin-top: 35px;
+        text-align: center;
       }
-    }
 
-    & .btn-primary {
-      padding: 15px 64px 15px 20px;
-    }
-  }
-
-  &__inner {
-    height: 100vh;
-    padding-top: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-direction: row-reverse;
-    @media (max-width: $breakpoint-md) {
-      height: auto;
-      padding-top: 170px;
-      text-align: center;
-
+      & b {
+        width: 100%;
+        display: inline-block;
+      }
     }
   }
 
   & .img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-
     &__wrap {
       position: absolute;
       top: 0;
       right: 0;
-      height: 100vh;
-      width: 48vw;
-      @media (max-width: $breakpoint-md) {
-        position: relative;
-        height: 300px;
-        width: 100%;
-        margin-top: 30px;
-      }
-    }
-  }
-}
-
-
-.s-thanks {
-
-  & .content {
-    & .description {
-      @media (max-width: $breakpoint-md) {
-        margin-bottom: 20px;
-      }
-    }
-  }
-
-  & .img {
-    &__wrap {
-
+      z-index: 1;
       @media (max-width: $breakpoint-md) {
         // max-width: 285px;
         margin: 80px auto 0 auto;
@@ -129,6 +54,9 @@
 .s-error {
 
   & .content {
+    text-align: center;
+    padding: 95px 0 100px 0;
+
     & .number {
       @include fontSize(160, 250);
       line-height: 1;
@@ -143,8 +71,12 @@
       color: #111A17;
     }
 
-    & .description {
+    & .heading {
+      margin-bottom: 30px;
+    }
 
+    & .description {
+      margin-bottom: 62px;
       @media (max-width: $breakpoint-md) {
         margin-bottom: 38px;
       }
@@ -155,6 +87,7 @@
 
 }
 
+/*
 .s-simple {
   padding: 50px 0 100px 0;
   @media (max-width: $breakpoint-md) {
@@ -199,30 +132,35 @@
   }
 
 }
-.s-info{
+
+.s-info {
   padding: 50px 0 100px 0;
   @media (max-width: $breakpoint-md) {
     padding: 30px 0 60px 0;
   }
 
-  & .heading{
+  & .heading {
     margin-bottom: 30px;
     @media (max-width: $breakpoint-md) {
       margin-bottom: 20px;
     }
   }
+
   & .delivery {
     margin-bottom: 40px;
-    & ul{
+
+    & ul {
       list-style: none;
       padding-left: 0;
-      & li{
+
+      & li {
         display: flex;
         align-items: center;
         justify-content: start;
         font-size: 17px;
         line-height: 1.5;
         font-weight: 300;
+
         & .img {
           max-width: 80%;
           max-height: 80%;
@@ -236,7 +174,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right:15px;
+            margin-right: 15px;
           }
         }
       }
@@ -251,6 +189,7 @@
       @media (max-width: 350px) {
         gap: 10px;
       }
+
       & .img {
         width: 80%;
         height: 80%;
@@ -271,6 +210,7 @@
 
 
 }
+
 .s-search {
   min-height: 70vh;
   padding: 50px 0 100px 0;
@@ -300,10 +240,12 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 24px 15px;
       }
-     /* @media (max-width: 450px) {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 24px 15px;
-      }*/
+      /* @media (max-width: 450px) {
+         grid-template-columns: repeat(1, 1fr);
+         gap: 24px 15px;
+       }*
     }
   }
 }
+
+*/
