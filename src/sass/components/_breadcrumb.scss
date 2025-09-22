@@ -18,19 +18,25 @@
   -ms-flex-direction: row;
   flex-direction: row;
   margin: 0;
-
-
   width: 100%;
-
-
   z-index: 2;
   white-space: nowrap;
-
   position: relative;
   @include transition(.4);
 
+
+
   @media (max-width: $breakpoint-md) {
-    padding: 12px 0;
+    padding: 15px 0 20px 0;
+    &:after {
+      content: '';
+      width: calc(100% + 20px);
+      height: 1px;
+      background: rgba(0, 0, 0, .1);
+      position: absolute;
+      bottom: 0;
+      left: -10px;
+    }
   }
 
   & a {
@@ -44,7 +50,7 @@
     }
   }
 
-  .breadcrumb_last {
+  & .breadcrumb_last {
     color: rgba(177, 185, 176, 1);
   }
 

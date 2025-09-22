@@ -3,11 +3,20 @@
 
 .s-product {
   margin-bottom: 150px;
+  @media (max-width: $breakpoint-md) {
+    margin: 30px 0;
+  }
 
   & .product {
+
+
     &__title {
       margin-bottom: 22px;
-
+      @media (max-width: $breakpoint-md) {
+        text-align: center;
+        width: 80%;
+        margin: 0 auto 30px auto;
+      }
     }
 
     &__price {
@@ -15,11 +24,18 @@
       font-size: 25px;
       color: #08121E;
       font-weight: bold;
+      @media (max-width: $breakpoint-md) {
+        margin: 24px 0;
+        justify-content: center;
+      }
     }
 
     &__controls {
       margin-bottom: 33px;
-
+      @media (max-width: $breakpoint-md) {
+        justify-content: center;
+        margin-bottom: 23px;
+      }
 
       & .product-qty {
         background: #fff;
@@ -57,6 +73,13 @@
         min-width: 243px;
       }
     }
+
+    &__gallery {
+      @media (max-width: $breakpoint-md) {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
   }
 
   & .swiper-thumbs {
@@ -74,6 +97,7 @@
         padding-bottom: 86%;
         background: $white-color;
         border: 1px solid rgba(239, 234, 223, 1);
+
       }
     }
 
@@ -85,6 +109,9 @@
       width: 80%;
       margin-right: auto;
       margin-left: 0;
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+      }
     }
   }
 }

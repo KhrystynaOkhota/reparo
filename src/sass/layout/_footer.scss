@@ -8,7 +8,7 @@
 
   & .social {
     margin-top: 24px;
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: $breakpoint-lg) {
       margin: 25px 0 30px 0;
       justify-content: center;
     }
@@ -16,7 +16,7 @@
 
   &__top {
     padding: 60px 0 30px 0;
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: $breakpoint-lg) {
       padding: 29px 0 0 0;
       text-align: center;
     }
@@ -32,7 +32,7 @@
         width: 93px;
         height: 93px;
 
-        @media (max-width: $breakpoint-md) {
+        @media (max-width: $breakpoint-lg) {
 
           margin: 0 auto 30px auto;
         }
@@ -41,7 +41,10 @@
   }
 
   &__bottom {
-    padding: 24px 0 31px 0;
+    padding: 25px 0 18px 0;
+    @media (max-width: $breakpoint-md) {
+      padding: 25px 0;
+    }
 
     &:before {
       content: '';
@@ -115,14 +118,25 @@
         }
       }
     }
-    &.two-column{
-      & .menu{
+
+    &.two-column {
+      & .menu {
         display: grid;
         grid-template-columns: 1fr 1fr; /* 2 колонки */
         gap: 10px 40px; /* відстань між рядками та колонками */
         list-style: none;
         padding: 0;
         margin: 0;
+        @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl) {
+          grid-template-columns: 1fr;
+        }
+
+        @media (max-width: $breakpoint-md) {
+          margin-bottom: 30px;
+        }
+        @media (max-width: $breakpoint-sm) {
+          grid-template-columns: 1fr;
+        }
       }
     }
   }
@@ -163,26 +177,9 @@
   }
 
   & .copyright {
-    @include fontSize(13, 16);
-    font-weight: 300;
-    color: rgba(139, 117, 96, 1);
-  }
-
-  & .develop {
-    &__link, &__text {
-      @include fontSize(13, 16);
-      font-weight: 300;
-
-    }
-
-    &__text {
-      color: rgba(139, 117, 96, 1);
-    }
-
-    &__link {
-      color: rgba(75, 101, 83, 1);
-      padding-left: 5px;
-    }
+    @include fontSize(14, 16);
+    font-weight: 400;
+    color: #899088;
   }
 }
 

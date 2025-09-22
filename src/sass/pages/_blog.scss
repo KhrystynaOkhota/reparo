@@ -57,9 +57,16 @@
 
 .s-blog {
   margin-bottom: 150px;
+  @media (max-width: $breakpoint-lg) {
+    margin-bottom: 50px;
+  }
 
   & .heading {
     margin-bottom: 30px;
+    @media (max-width: $breakpoint-lg) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
   }
 
   & .article {
@@ -68,6 +75,14 @@
       grid-template-columns: 1fr 1fr 1fr;
       gap: 56px 30px;
       margin-bottom: 70px;
+      @media (max-width: $breakpoint-lg) {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
     }
 
     &__img {
@@ -81,23 +96,30 @@
       &-wrap {
         margin-bottom: 23px;
         padding-bottom: 75%;
+        @media (max-width: $breakpoint-lg) {
+          padding-bottom: 73%;
+          margin-bottom: 13px;
+        }
       }
     }
 
     &__title {
-      font-size: 22px;
+      @include fontSize(18, 22);
+      line-height: 1.35;
       color: #5E6C5B;
       margin-bottom: 5px;
     }
 
     &__date {
       margin-bottom: 3px;
-      font-size: 18px;
+      @include fontSize(16, 18);
+      line-height: 1.6;
       color: #899088;
     }
 
     &__description {
-      font-size: 18px;
+      @include fontSize(16, 18);
+      line-height: 1.6;
       color: #08121E;
     }
   }

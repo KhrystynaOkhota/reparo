@@ -66,14 +66,18 @@
         text-align: left;
         padding-bottom: 15px;
       }
-
+      @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
+        gap:30px;
+      }
       &-item {
         & a {
           font-size: 18px;
           line-height: 1;
           font-weight: 400;
           @include transition(.5);
-
+          @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
+           font-size: 16px;
+          }
           &:hover {
             color: rgba(139, 117, 96, 1);
           }
@@ -191,6 +195,10 @@
     &__wrap {
       width: 223px;
       height: 89.2px;
+      @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
+        width: 150px;
+        height: 61px;
+      }
       @media (max-width: $breakpoint-md) {
         width: 200px;
         height: 80px;
@@ -210,7 +218,12 @@
 
   & .btn-primary {
     margin-left: 37px;
-    @media (max-width: $breakpoint-md) {
+
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
+      font-size: 16px;
+      margin-left: 20px;
+    }
+    @media (max-width: $breakpoint-lg) {
       display: none;
     }
   }
