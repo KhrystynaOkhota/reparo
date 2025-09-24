@@ -192,11 +192,15 @@
   &__top {
     margin-bottom: 40px;
   }
-  &.no-bg{
+
+  &.no-bg {
     background: transparent;
+
+    @media (max-width: $breakpoint-md) {
+      background: #F4EFE6;
+      padding: 55px 0 70px 0;
+    }
   }
-
-
 
 
   .comparison-slider-container {
@@ -279,7 +283,6 @@
     left: auto;
     transform: none;
   }
-
 
 
 }

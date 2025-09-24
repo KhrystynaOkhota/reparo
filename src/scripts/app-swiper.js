@@ -21,11 +21,11 @@ jQuery(function ($) {
 
       $p.addClass('custom-fraction');
       if (slidesLength > 1 && slidesLength < 10) {
-        $p.find('.custom-current').text('01');
-        $p.find('.custom-total').text('0' + slidesLength);
+        $p.find('.custom-fraction__current').text('01');
+        $p.find('.custom-fraction__total').text('0' + slidesLength);
       } else if (slidesLength > 1) {
-        $p.find('.custom-current').text('01');
-        $p.find('.custom-total').text('0' + slidesLength);
+        $p.find('.custom-fraction__current').text('01');
+        $p.find('.custom-fraction__total').text('0' + slidesLength);
       }
     };
     if (!options.navigation)

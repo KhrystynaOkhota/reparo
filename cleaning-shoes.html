@@ -773,10 +773,10 @@
 
     </div>
 </footer>
+
+
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
-
-
     <div class="popup-content" data-rel="11">
         <div class="layer-close"></div>
         <div class="popup-container">
@@ -784,107 +784,37 @@
             </div>
 
             <div class="popup-info">
-                <div class="product-horiz">
-                    <a href="" class="product__img-wrap d-block">
-                        <img src="assets/img/p-1.png" alt="" class="product__img">
-                    </a>
-                    <div class="product-content">
-                        <a href="" class="product__title text-bold">Жіноча вишита блуза Мотив Символіка</a>
-                        <ul class="product__characteristic">
-                            <li><b>Колір:</b> червоний</li>
-                            <li><b>Розмір:</b> XS | UA 42</li>
-                        </ul>
-
-                        <div class="product-controls d-flex align-middle align-justify">
-                            <div class="product__count--wrap">
-                                <div class="select-box">
-                                    <select name="orderby" class="default">
-                                        <option value="1">1</option>
-                                        <option value="2">
-                                            2
-                                        </option>
-                                        <option value="3" selected="selected">
-                                            3
-                                        </option>
-                                        <option value="4">
-                                            4
-                                        </option>
-                                        <option value="5">
-                                            5
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="product__price">
-                                <div class="product__price-current text-bold">5 690 грн.</div>
-                            </div>
+                <div class="row">
+                    <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 ">
+                        <div class="heading text-bold text-center">Ваше замовлення</div>
+                        <div class="description text-center">Заповніть форму, і наші менеджері звʼяжеться з вами для
+                            уточнення деталей заказу.
                         </div>
                     </div>
                 </div>
                 <form>
-                    <div class="row m-row">
-                        <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
-                            <div class="heading heading-font text-center">Швидка покупка</div>
-                        </div>
-                    </div>
-                    <div class="row m-row">
-                        <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
+
+                    <div class="row align-center">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-13 col-xs-13">
                             <div class="form-control">
                                 <input class="form-control__input" type="text" name="" value=""
-                                       placeholder="Ім’я"
+                                       placeholder="Ваше ʼім’я"
                                        title="">
                             </div>
                             <div class="form-control">
-                                <input class="form-control__input" type="email" name="" value=""
-                                       placeholder="E-mail"
+                                <input class="form-control__input" type="tel" name="" value=""
+                                       placeholder="+ 38 (_ _ _) _ _ _ - _ _ - _ _"
                                        title="">
                             </div>
 
-                            <input type="submit" value="Замовити" class="btn btn-primary">
+                            <input type="submit" value="Купити" class="btn btn-primary">
                         </div>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-    <div class="popup-content" data-rel="no-size">
-        <div class="layer-close"></div>
-        <div class="popup-container">
-            <div class="btn-close d-flex align-middle align-center"><i class="icon-close"></i>
-            </div>
-
-            <div class="popup-info">
-                <h4 class="heading text-center text-bold">Ми надішлемо вам сповіщення, коли розмір 44 з’aявиться.</h4>
-                <form>
-                    <div class="row m-row">
-                        <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
-                            <div class="form-control">
-                                <input class="form-control__input" type="email" name="" value=""
-                                       placeholder="natali.info@gmail.com"
-                                       title="">
-                            </div>
-
-                            <input type="submit" value="Прийняти" class="btn btn-primary">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="popup-content" data-rel="thanks-subscribe">
-        <div class="layer-close"></div>
-        <div class="popup-container">
-            <div class="btn-close d-flex align-middle align-center"><i class="icon-close"></i>
-            </div>
-
-            <div class="popup-info">
-                <h4 class="heading text-center text-light">Ви вдало підписались на цю розсилку!</h4>
             </div>
         </div>
     </div>
 </div>
-
 
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
@@ -976,70 +906,7 @@
 </script>
 
 
-<!--
-<script>
 
-    $('.preload__wrap').on('click', function () {
-        $(this).find(".preload").css({
-            'z-index': -1,
-            'opacity': 0
-        });
-        $(this).find("video").css({"display": "block"});
-        $(this).find("video").trigger('play');
-
-    });
-</script>-->
-
-
-<!-- GSAP CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-<script>
-    const container = document.querySelector('.comparison-container');
-    const afterImg = container.querySelector('.img-after');
-    const slider = container.querySelector('.slider');
-
-    let isActive = false;
-
-    function slide(x) {
-        let rect = container.getBoundingClientRect();
-        let pos = x - rect.left;
-
-        if (pos < 0) pos = 0;
-        if (pos > rect.width) pos = rect.width;
-
-        // Рахуємо відсоток для clip-path
-        let percent = (1 - pos / rect.width) * 100;
-
-        gsap.to(afterImg, {
-            clipPath: `inset(0 ${percent}% 0 0)`,
-            duration: 0.25,
-            ease: "power2.out"
-        });
-
-        gsap.to(slider, {
-            left: pos,
-            duration: 0.25,
-            ease: "power2.out"
-        });
-    }
-
-    // Мишка
-    slider.addEventListener('mousedown', () => isActive = true);
-    window.addEventListener('mouseup', () => isActive = false);
-    window.addEventListener('mousemove', (e) => {
-        if (isActive) slide(e.clientX);
-    });
-
-    // Touch
-    slider.addEventListener('touchstart', () => isActive = true);
-    window.addEventListener('touchend', () => isActive = false);
-    window.addEventListener('touchmove', (e) => {
-        if (isActive) slide(e.touches[0].clientX);
-    });
-
-
-</script>
 
 
 </body>

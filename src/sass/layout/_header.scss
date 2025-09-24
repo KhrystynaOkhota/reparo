@@ -29,6 +29,12 @@
     }
   }
 
+  &.no-line {
+    &:after {
+      display: none;
+    }
+  }
+
   @media (max-width: $breakpoint-lg) {
     padding: 20px 0;
 
@@ -39,7 +45,7 @@
 
 
   &__main {
-    transition: all ease-out .5s;
+   /* transition: all ease-out .5s;
     padding: 15px 0;
     position: relative;
     @media (max-width: $breakpoint-lg) {
@@ -48,7 +54,7 @@
       display: none !important;
       gap: 30px;
     }
-
+*/
 
     & .menu {
       display: -webkit-box;
@@ -67,8 +73,9 @@
         padding-bottom: 15px;
       }
       @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
-        gap:30px;
+        gap: 30px;
       }
+
       &-item {
         & a {
           font-size: 18px;
@@ -76,8 +83,9 @@
           font-weight: 400;
           @include transition(.5);
           @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
-           font-size: 16px;
+            font-size: 16px;
           }
+
           &:hover {
             color: rgba(139, 117, 96, 1);
           }
@@ -279,51 +287,31 @@
     }
   }
 
-  &__inner {
+  &__main {
     @media (max-width: $breakpoint-lg) {
 
-      height: calc(100vh - 75px);
-      background-color: #fff;
-      position: fixed;
-      top: 75px;
-      transition: all 1.2s ease;
-      z-index: 2;
-      width: 100%;
-      right: -100%;
+      position: absolute;
+      top:150px;
+      left: 120%;
+      max-height: calc(var(--dvh) - var(--h-height));
+      width: calc(100% + 1rem);
+      max-width: calc(100% + 1rem);
+      background-color: #FEFCF6;
+      transition: .25s linear, transform .6s  cubic-bezier(.37, 0, .63, 1);
+      transform: translateX(150%);
+      will-change: transform;
+      display: flex;
 
-      overflow-y: auto;
-      overflow-x: hidden;
-      display: grid;
-      padding: 24px 20px 20px 20px;
-      &:before {
-        content: '';
-        width: calc(100% - 30px);
-        height: 1px;
-        background: rgba(204, 195, 189, 0.5);
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
 
     }
-  }
-
-  .logo__wrap, & .controls {
-    transition: all ease-out .5s;
   }
 
   &.open-menu {
 
-    & .header__inner {
+    & .header__main {
       @media (max-width: $breakpoint-lg) {
-
-        right: 0;
-        transition: all .5s ease;
+        transform: translateX(0%);
       }
-    }
-
-    & .logo__wrap, & .controls {
-      opacity: 0;
     }
   }
 
