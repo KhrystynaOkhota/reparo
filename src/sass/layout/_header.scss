@@ -45,16 +45,16 @@
 
 
   &__main {
-   /* transition: all ease-out .5s;
-    padding: 15px 0;
-    position: relative;
-    @media (max-width: $breakpoint-lg) {
-      padding: 0;
-      order: 2;
-      display: none !important;
-      gap: 30px;
-    }
-*/
+    /* transition: all ease-out .5s;
+     padding: 15px 0;
+     position: relative;
+     @media (max-width: $breakpoint-lg) {
+       padding: 0;
+       order: 2;
+       display: none !important;
+       gap: 30px;
+     }
+ */
 
     & .menu {
       display: -webkit-box;
@@ -262,6 +262,7 @@
       @media (max-width: $breakpoint-lg) {
         display: block;
         margin-left: 57px;
+        z-index: 1;
       }
 
       &.active {
@@ -271,7 +272,7 @@
             // background-color: rgba(226, 241, 231, 1);
 
             &:nth-child(1) {
-              transform: translateY(7px) rotate(45deg);
+              transform: translateY(8px) rotate(45deg);
             }
 
             &:nth-child(2) {
@@ -279,7 +280,7 @@
             }
 
             &:nth-child(3) {
-              transform: translateY(-7px) rotate(-45deg);
+              transform: translateY(-8px) rotate(-45deg);
             }
           }
         }
@@ -291,18 +292,22 @@
     @media (max-width: $breakpoint-lg) {
 
       position: absolute;
-      top:150px;
-      left: 120%;
-      max-height: calc(var(--dvh) - var(--h-height));
-      width: calc(100% + 1rem);
-      max-width: calc(100% + 1rem);
+      top: 101px;
+
+      left: 0;
+      padding: 20px;
+      width: 100vw;
+      max-width: 100%;
       background-color: #FEFCF6;
-      transition: .25s linear, transform .6s  cubic-bezier(.37, 0, .63, 1);
+      transition: .25s linear, transform .6s cubic-bezier(.37, 0, .63, 1);
       transform: translateX(150%);
       will-change: transform;
       display: flex;
 
 
+    }
+    @media (max-width: $breakpoint-md) {
+      top: 120px;
     }
   }
 
@@ -347,6 +352,9 @@
   visibility: hidden;
   -webkit-transition: visibility var(--transition-1), opacity var(--transition-1);
   transition: visibility var(--transition-1), opacity var(--transition-1);
+  @media (max-width: $breakpoint-lg) {
+    top: 30px;
+  }
 
   &.active {
     opacity: 1;

@@ -11,13 +11,14 @@
   }
 
   &-title {
-    padding: 20px 0 0 0;
+    // padding: 20px 0 0 0;
 
   }
 
   &-entry {
     border-top: 1px solid rgba(0, 0, 0, .1);
     padding-bottom: 20px;
+    padding-top: 20px;
 
     &:last-child {
       border-bottom: 1px solid rgba(0, 0, 0, .1);
@@ -107,18 +108,37 @@
 
 .s-types-cleaning {
   padding: 140px 0 150px;
+  @media (max-width: $breakpoint-md) {
+    padding: 50px 0 70px 0;
+  }
 
   & .heading {
     margin-bottom: 26px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 16px;
+    }
   }
 
   & .types-cleaning {
     position: relative;
+    @media (max-width: $breakpoint-lg) {
+      text-align: center;
+
+      max-width: 330px;
+      width: 100%;
+      margin: 0 auto;
+    }
 
     &__grid {
       gap: 20px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
+      @media (max-width: $breakpoint-lg) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr;
+      }
     }
 
     &__number {
@@ -131,7 +151,9 @@
       border-radius: 21px;
       line-height: 1;
       padding: 5px 0;
-
+      @media (max-width: $breakpoint-md) {
+        margin: 0 auto 20px auto;
+      }
 
       &:after {
         content: '';
@@ -154,8 +176,14 @@
       border: 1px solid #5E6C5B;
       padding: 16px 20px;
       display: inline-block;
-      min-width: 243px;
+
       text-align: center;
+      @media (min-width: 1360px) {
+        min-width: 243px;
+      }
+      @media (max-width: $breakpoint-md) {
+        min-width: 243px;
+      }
     }
 
     &__img {
@@ -177,6 +205,9 @@
 
 .s-text {
   padding: 80px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 63px 0 73px 0;
+  }
 
   & .cms-content {
     & p {
@@ -188,6 +219,9 @@
 .s-comparison {
   background: #F4EFE6;
   padding: 86px 0 150px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 57px 0 70px 0;
+  }
 
   &__top {
     margin-bottom: 40px;
@@ -232,7 +266,7 @@
     z-index: 2;
   }
 
-  .handle {
+  & .handle {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -241,26 +275,46 @@
     cursor: ew-resize;
     z-index: 3;
 
+    & i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 4;
+      font-size: 10px;
+      color: #899088;
+
+      &.icon-left-ar {
+
+        left: -8px;
+      }
+
+      &.icon-right-ar {
+        right: -8px;
+      }
+
+    }
+
+    &:before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      background: #F4EFE6;
+      border: 2px solid #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      cursor: ew-resize;
+      z-index: 3;
+
+    }
+
   }
 
-  .handle:before {
-    content: '';
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background: #F4EFE6;
-    border: 2px solid #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
-    cursor: ew-resize;
-    z-index: 3;
-
-  }
-
-  .slider-caption {
+  & .slider-caption {
     position: absolute;
     bottom: 15px;
     left: 50%;
@@ -271,39 +325,33 @@
     font-size: 16px;
     opacity: 0;
     z-index: 4;
+
+    &-left {
+      left: 9px;
+      transform: none;
+    }
+
+    &-right {
+      right: 9px;
+      left: auto;
+      transform: none;
+    }
   }
-
-  .slider-caption-left {
-    left: 9px;
-    transform: none;
-  }
-
-  .slider-caption-right {
-    right: 9px;
-    left: auto;
-    transform: none;
-  }
-
-
 }
 
 .s-price {
   padding: 109px 0 109px 0;
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-lg) {
     padding: 44px 0 70px 0;
   }
 
   & .heading {
-    margin-bottom: 50px;
-    @media (max-width: $breakpoint-md) {
 
-      margin-bottom: 18px;
-    }
   }
 
   & .accordion {
     margin-top: 50px;
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: $breakpoint-lg) {
       margin-top: 26px;
     }
 
@@ -313,9 +361,14 @@
       top: 50%;
       right: 0;
       transform: translateY(-50%);
+      @media (max-width: $breakpoint-md) {
+        top: 0;
+        transform: none;
+      }
 
       & i {
         color: #5E6C5B;
+        @include transition(.5);
       }
 
     }
@@ -332,6 +385,9 @@
       }
     }
 
+    &-entry {
+      padding: 26px 0;
+    }
 
     &__inner {
       padding-bottom: 6px;
@@ -339,14 +395,75 @@
     }
 
 
+    & .price__item {
+
+      display: grid;
+      grid-template-columns: 43.75% 25% 31.25%;
+      gap: 15px;
+      @media (max-width: $breakpoint-md) {
+        grid-template-columns: 1fr 1fr;
+        & .title {
+          grid-column: 1 / -1
+        }
+      }
+
+      &:not(.price__item-top) {
+        padding: 16px 15px;
+        @media (max-width: $breakpoint-md) {
+          padding: 16px 20px;
+        }
+
+        &:nth-child(odd) {
+          background: $white-color;
+        }
+
+        & .title, .price {
+          color: #5E6C5B;
+          @include transition(.5);
+        }
+
+        & .title {
+          padding-left: 15px;
+          @media (max-width: $breakpoint-md) {
+            padding-left: 0;
+          }
+        }
+
+        & .price {
+          font-size: 20px;
+        }
+      }
+
+      &-top {
+        & .price, & .title {
+          color: #5E6C5B;
+          font-size: 30px;
+          @media (max-width: $breakpoint-md) {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+
+
     & .active {
+      & .title, .price {
+        color: #899088;
+      }
+
       & .accordion {
         &__title {
           color: #899088;
         }
 
         &__btn {
-          background: #B0B8AF;
+          background: #899088;
+          border-color: #899088;
+
+          & i {
+            color: #fff;
+            transform: rotate(180deg);
+          }
 
           & span {
             &:after {
@@ -361,44 +478,6 @@
       }
     }
 
-
-    & .price__item {
-      padding: 16px 15px;
-      display: grid;
-      grid-template-columns: 43.75% 25% 31.25%;
-      gap: 15px;
-      @media (max-width: $breakpoint-md) {
-        grid-template-columns: 1fr 1fr;
-        & .title {
-          grid-column: 1 / -1
-        }
-      }
-
-      &:not(.price__item-top) {
-        &:nth-child(odd) {
-          background: $white-color;
-        }
-
-        & .title, .price {
-          color: #5E6C5B;
-        }
-
-        & .title {
-          padding-left: 15px;
-        }
-
-        & .price {
-          font-size: 20px;
-        }
-      }
-
-      &-top {
-        & .price, & .title {
-          color: #5E6C5B;
-          @include fontSize(22, 30);
-        }
-      }
-    }
   }
 }
 
@@ -414,6 +493,13 @@
   & .heading {
     @media (max-width: $breakpoint-md) {
       margin-bottom: 11px;
+    }
+  }
+
+  & .description {
+    font-size: 22px;
+    @media (max-width: $breakpoint-md) {
+      font-size: 18px;
     }
   }
 
@@ -526,6 +612,9 @@
 .s-cta {
   margin-bottom: 75px;
   margin-top: 26px;
+  @media (max-width: $breakpoint-lg) {
+    margin: 26px 0 0 0;
+  }
 
   & .heading {
     margin-bottom: 52px;
@@ -533,6 +622,9 @@
 
   & .content {
     padding: 75px 0;
+    @media (max-width: $breakpoint-md) {
+      padding: 75px 20px 50px 20px;
+    }
   }
 
   &__inner {
@@ -552,6 +644,9 @@
 
 .s-promo {
   padding: 47px 0 175px 0;
+  @media (max-width: $breakpoint-lg) {
+    padding: 70px 0;
+  }
 
   & .btn-primary {
     display: inline-block;

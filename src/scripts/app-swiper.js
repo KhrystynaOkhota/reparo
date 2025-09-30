@@ -9,7 +9,12 @@ jQuery(function ($) {
     options = !options || typeof options !== "object" ? {} : options;
     const $p = swiper.closest(".swiper-entry"),
       slidesLength = swiper.find(".swiper-wrapper>.swiper-slide").length;
-
+    if (options.progressbar)
+      options.pagination = {
+        el: $p.find('.swiper-pagination')[0],
+        type: 'progressbar',
+        clickable: true
+      };
     if (!options.pagination)
       options.pagination = {
         el: $p.find(".swiper-pagination")[0],

@@ -105,7 +105,12 @@
   @include fontSize(15, 17);
 }
 
-
+.icon-left-ar:before {
+  content: "\e90b";
+}
+.icon-right-ar:before {
+  content: "\e90c";
+}
 .icon-minus:before {
   content: "\e900";
 }
